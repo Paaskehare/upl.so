@@ -1,0 +1,27 @@
+#image {
+  display: block;
+  margin: 30px auto;
+  width: 950px;
+  text-align: center;
+}
+
+#image a {
+  color: transparent;
+}
+
+#image img {
+  background: white;
+  padding: 10px;
+  max-width: 880px;
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
+}

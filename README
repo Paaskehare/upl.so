@@ -1,0 +1,13 @@
+upl.so
+
+-----
+
+Commandline File Uploader
+
+
+Edit config.py to suit your needs
+
+Requires:
+  - webpy    (WebServer)
+  - peewee   (Database)
+  - pygments (Syntax Highlighting)

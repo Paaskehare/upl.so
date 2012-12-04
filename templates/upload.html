@@ -1,0 +1,19 @@
+$def with(f)
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>$f.name</title>
+  <link rel="stylesheet" type="text/css" href="/static/global.css" /> 
+  <link rel="stylesheet" type="text/css" href="/static/file.css" /> 
+</head>
+<body>
+<div id="wrap">
+  <h1>$f.name</h1>
+  <div id="notice">
+    We don't know how to handle this file-type, however you can download it below:
+  </div>
+  <a href="/$f.base/download/" class="button">Download</a>
+</div>
+</body>
+</html>
