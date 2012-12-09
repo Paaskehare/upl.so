@@ -7,8 +7,6 @@ from peewee import *
 import datetime
 
 db = SqliteDatabase(config.DATABASE, threadlocals=True)
-#db = SqliteDatabase('test.db')
-#db = SqliteDatabase('/home/ole/Projects/webpy/uplso/test.db')
 
 class BaseModel(Model):
     class Meta:
@@ -20,7 +18,7 @@ class User(BaseModel):
     key      = CharField()
 
 class File(BaseModel):
-    template = 'upload.html'
+    template = 'upload'
 
     name     = CharField()
     user     = ForeignKeyField(User, related_name='files', null = True)
@@ -46,28 +44,22 @@ class File(BaseModel):
         return metafile.get(metafile.file_id == self.id)
 
 class Image(BaseModel):
-    template = 'image.html'
+    template = 'image'
     file_id  = IntegerField(default=0)
     image    = CharField()
 
 class Document(BaseModel):
-    template = 'document.html'
+    template = 'document'
     file_id  = IntegerField(default=0)
     html     = TextField(null = True)
     content  = TextField(null = True)
 
 class Audio(BaseModel):
-    template = 'audio.html'
+    template = 'audio'
     file_id  = IntegerField(default=0)
 
 if __name__ == '__main__':
     db.connect()
-    #User.create_table()
-    #File.create_table()
-    #Image.create_table()
-    #Document.create_table()
-    Audio.create_table()
-
     #f = File()
 
     #f.name = 'file.png'

@@ -146,6 +146,13 @@ def detect_file_type(fs):
 
     return FILE_TYPES.get(type, FILE_TYPES['default']), mime
 
+def get_file(base):
+    try:
+        f = File.get(File.base == base)
+    except File.DoesNotExist:
+        return None
+    return f
+
 def save_file(fs):
     obj, mime = detect_file_type(fs)
 
