@@ -88,6 +88,8 @@ class TextFile(DefaultFile):
 
         lexer = None
 
+        content = self.f.value.decode('utf-8')
+
         plain_ext = '.txt', '.log',
 
         if self.ext in plain_ext:
@@ -102,17 +104,17 @@ class TextFile(DefaultFile):
                     lexer = get_lexer_for_mimetype(self.mimetype)
                 except ClassNotFound:
                     try:
-                        lexer = guess_lexer(self.f.value)
+                        lexer = guess_lexer(content)
                     except ClassNotFound:
                         lexer = TextLexer
 
-        html = highlight(self.f.value, lexer, HtmlFormatter(linenos=True, lineanchors='line', anchorlinenos = True))
+        html = highlight(content, lexer, HtmlFormatter(linenos=True, lineanchors='line', anchorlinenos = True))
 
         txt = Document()
 
         txt.file_id = self.id
         txt.html    = html
-        txt.content = self.f.value
+        txt.content = content
 
         txt.save()
 
